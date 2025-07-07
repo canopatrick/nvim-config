@@ -7,6 +7,7 @@ local map = vim.keymap.set
 map("n", "<Leader>lg", function() Snacks.lazygit.open() end, { desc = "Open LazyGit"})
 --map("n", "<Leader>n", ":Neotree reveal_force_cwd<cr>", { noremap = true, silent = true, desc = "Reveal current file in file browser" })
 map("n", "<Leader>t", ":FzfLua git_files<cr>", { noremap = true, silent = true, desc = "Fzf with git files" })
+map("n", "<Leader>f", ":FzfLua files<cr>", { noremap = true, silent = true, desc = "Fzf all files" })
 
 -- ` to go to the next buffer; ~ to go back
 map("n", "`", "<C-W>w", { silent = true, desc = "Next buffer" })
