@@ -50,9 +50,9 @@ return {
     end
 
     require("dap-vscode-js").setup({
-      node_path = "node",                                                        -- Path of node executable. Defaults to $NODE_PATH, and then "node"
-      debugger_path = os.getenv("HOME") .. "/.local/share/nvim/vscode-js-debug", -- Path to vscode-js-debug installation.
-      log_file_path = os.getenv("HOME") .. "/.local/share/nvim/dap.log"
+      node_path = "node",                                -- Path of node executable. Defaults to $NODE_PATH, and then "node"
+      debugger_path = os.getenv("VSCODE_JS_DEBUG_PATH"), -- Path to vscode-js-debug installation.
+      log_file_path = os.getenv("HOME") .. "/.local/share/nvim/dap.log",
     })
 
     vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })

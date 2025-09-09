@@ -19,3 +19,24 @@ return {
   }
 }
 ```
+
+### nvim-dap with vscode-jsdebug
+
+You will need to download and install the [Microsoft vscode-js-debug package](https://github.com/microsoft/vscode-js-debug):
+
+```sh
+test -d ~/opensource || mkdir ~/opensource
+cd ~/opensource
+git clone https://github.com/microsoft/vscode-js-debug.git
+cd vscode-js-debug
+npm install --legacy-peer-deps --no-save && \
+  npx gulp vsDebugServerBundle && \
+  rm -rf out && \
+  mv dist out
+```
+
+Now add a `VSCODE_JS_DEBUG_PATH` environment variable to your shell config. Example:
+
+```sh
+echo 'VSCODE_JS_DEBUG_PATH="${HOME}/opensource/vscode-js-debug"' >> ~/.zshrc
+```
