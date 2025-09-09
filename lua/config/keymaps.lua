@@ -20,6 +20,10 @@ map("n", ".", ".", { silent = true, desc = "Repeat last command" })
 -- Clear search highlights
 map("n", "<CR>", ":noh<CR><CR>", { silent = true, desc = "Clear search highlights" })
 
+map('n', '<leader>cJ', function()
+  vim.cmd('%!jq .')
+end, { desc = "Pretty print JSON in buffer using jq" })
+
 -- Disable the flash plugin's hijacking of a very core vim command
 -- vim.keymap.del("n", "s")
 
